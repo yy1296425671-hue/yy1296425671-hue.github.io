@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+# Temporary files
+*.tmp
+_preview_*
