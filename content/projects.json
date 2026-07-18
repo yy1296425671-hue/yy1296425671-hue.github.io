@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "name": "ECLAT LEAF",
+      "order": 1,
+      "category": "UI 设计 / 推广周边",
+      "period": "2024.11 - 2025.02",
+      "isIndependent": true,
+      "highlights": [
+        "从低保真线稿到高保真界面全链路设计，输出**25张**高保真界面",
+        "制作**44页**可交互原型，完整呈现App核心体验流程",
+        "原创全套品牌插画，搭建完整品牌视觉识别体系",
+        "延伸设计礼盒、服饰、香薰等周边衍生品，实现视觉体系全场景落地"
+      ],
+      "tags": ["Figma", "Illustrator", "Photoshop", "品牌插画"],
+      "images": ["images/zcool_01.jpg", "images/zcool_02.jpg", "images/zcool_03.jpg", "images/zcool_04.jpg"]
+    },
+    {
+      "name": "REMORIE",
+      "order": 2,
+      "category": "产品设计",
+      "period": "2025.02 - 2025.06",
+      "isIndependent": true,
+      "highlights": [
+        "整合**NFC + 投影技术**，打造数字实体融合的记忆存储与回放产品",
+        "使用 Figma 完成全套 UI 界面设计，覆盖完整用户操作流程",
+        "Blender 完成装置 3D 建模，通过**3D 打印**完成实体装置制作与外观美化",
+        "Illustrator 原创品牌插画 + 定制化 NFC 卡片，统一品牌视觉形象"
+      ],
+      "tags": ["Figma", "Blender", "NFC 技术", "3D 打印"],
+      "images": ["images/zcool_05.jpg", "images/zcool_06.jpg", "images/zcool_07.jpg", "images/zcool_08.jpg"]
+    },
+    {
+      "name": "PICKABOO",
+      "order": 3,
+      "category": "品牌设计",
+      "period": "品牌视觉识别系统设计",
+      "isIndependent": true,
+      "highlights": [
+        "苹果汁品牌从零建立**品牌视觉识别系统**与包装设计完整方案",
+        "通过**视觉提示**帮助消费者选购前快速辨别果肉含量与甜度",
+        "设计涵盖瓶身标签、营养成分标识、选购引导流程等**全触点**视觉体验",
+        "统一线上线下品牌视觉，形成一致的品牌形象体系"
+      ],
+      "tags": ["品牌 VI", "包装设计", "视觉识别"],
+      "images": ["images/zcool_09.jpg", "images/zcool_10.jpg", "images/zcool_11.jpg"]
+    }
+  ]
+}

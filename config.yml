@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "content"
+    label: "网站内容"
+    files:
+      - name: "projects"
+        label: "作品列表"
+        file: "content/projects.json"
+        fields:
+          - name: "projects"
+            label: "作品"
+            widget: "list"
+            fields:
+              - { name: "name", label: "项目名称", widget: "string" }
+              - { name: "order", label: "排序", widget: "number", valueType: "int" }
+              - { name: "category", label: "类别", widget: "string" }
+              - { name: "period", label: "时间", widget: "string" }
+              - { name: "isIndependent", label: "独立项目", widget: "boolean", default: true }
+              - name: "highlights"
+                label: "亮点"
+                widget: "list"
+                field: { name: "item", label: "一条描述", widget: "string" }
+              - name: "tags"
+                label: "标签"
+                widget: "list"
+                field: { name: "item", label: "标签", widget: "string" }
+              - name: "images"
+                label: "图片"
+                widget: "list"
+                field: { name: "item", label: "图片路径", widget: "string" }

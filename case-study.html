@@ -388,7 +388,6 @@ footer{text-align:center;padding:48px;color:var(--text-muted);font-size:.72rem;l
 <!-- WORKS -->
 <section class="section" id="works">
   <div class="section-tag reveal" style="max-width:1100px;margin:0 auto 12px">精选作品</div>
-  <div id="works-container">
 
   <!-- ECLAT LEAF -->
   <article class="work-chapter reveal">
@@ -499,7 +498,6 @@ footer{text-align:center;padding:48px;color:var(--text-muted);font-size:.72rem;l
       </div>
     </div>
   </article>
-  </div><!-- /works-container -->
 </section>
 
 <!-- ABOUT -->
@@ -670,81 +668,6 @@ footer{text-align:center;padding:48px;color:var(--text-muted);font-size:.72rem;l
     if(e.key==='ArrowLeft') navLb(-1);
     if(e.key==='ArrowRight') navLb(1);
   });
-  // Dynamic projects from content JSON
-  fetch('content/projects.json')
-    .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
-    .then(function(data){
-      var projects = data && data.projects;
-      if(!projects || !projects.length) return;
-      renderProjects(projects);
-    })
-    .catch(function(){});
-
-  function renderProjects(projects){
-    var container = document.getElementById('works-container');
-    if(!container) return;
-    var html = '';
-    projects.forEach(function(p, i){
-      var highlightsHtml = '';
-      if(p.highlights && p.highlights.length){
-        p.highlights.forEach(function(line){
-          var text = line.replace(/\*\*(.+?)\*\*/g, '<em>$1</em>');
-          highlightsHtml += '<li>' + text + '</li>';
-        });
-      }
-      var tagsHtml = '';
-      if(p.tags && p.tags.length){
-        p.tags.forEach(function(t){
-          tagsHtml += '<span class="ci-tag">' + escapeHtml(t) + '</span>';
-        });
-      }
-      var imagesHtml = '';
-      if(p.images && p.images.length){
-        p.images.forEach(function(src){
-          if(src) imagesHtml += '<img src="' + escapeHtml(src) + '" alt="' + escapeHtml(p.name) + '" data-lb loading="lazy">';
-        });
-      }
-      var num = String(i + 1).padStart(2, '0');
-      var imageClass = '';
-      var imgCount = p.images ? p.images.length : 0;
-      if(imgCount === 1) imageClass = 'single-col';
-      else if(imgCount === 3) imageClass = 'triple';
-
-      html += '<article class="work-chapter reveal">'
-        + '<div class="chapter-num">' + num + '</div>'
-        + '<div class="chapter-card"><div class="chapter-body">'
-        + '<div class="chapter-info">'
-        + '<div class="ci-left">'
-        + '<div class="ci-project">Project ' + num + '</div>'
-        + '<h3>' + escapeHtml(p.name) + '</h3>'
-        + '</div>'
-        + '<div class="ci-body">'
-        + '<div class="ci-meta-row">'
-        + (p.isIndependent ? '<span class="ci-badge-solo">独立项目</span>' : '')
-        + '<span class="ci-cat">' + escapeHtml(p.category) + '</span>'
-        + '<span class="ci-period">' + escapeHtml(p.period) + '</span>'
-        + '</div>'
-        + (highlightsHtml ? '<ul class="ci-points">' + highlightsHtml + '</ul>' : '')
-        + (tagsHtml ? '<div class="ci-tags">' + tagsHtml + '</div>' : '')
-        + '</div></div>'
-        + (imagesHtml ? '<div class="chapter-images' + (imageClass ? ' ' + imageClass : '') + '">' + imagesHtml + '</div>' : '')
-        + '</div></div></article>';
-    });
-    container.innerHTML = html;
-    setTimeout(function(){
-      var reveals = document.querySelectorAll('#works-container .reveal');
-      reveals.forEach(function(el){
-        var r = el.getBoundingClientRect();
-        if(r.top < window.innerHeight * .88) el.classList.add('visible');
-      });
-    }, 100);
-  }
-
-  function escapeHtml(str){
-    var d = document.createElement('div');
-    d.textContent = str;
-    return d.innerHTML;
-  }
 })();
 </script>
 </body>
