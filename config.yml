@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: yy1296425671-hue/yy1296425671-hue.github.io
   branch: master
 
 media_folder: "images/uploads"
